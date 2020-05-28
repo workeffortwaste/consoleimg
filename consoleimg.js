@@ -1,5 +1,5 @@
 /* consoleimg v1.0 - chris johnson / @defaced */
-const consoleImg = (function () {
+const consoleimg = (function () {
   return {
     load: function (i, { size: s = 320, color: c = 'transparent' } = {}) {
       const r = new FileReader()

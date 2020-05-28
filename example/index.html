@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>consoleimg - Add images to your website's developer console</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans&display=swap" rel="stylesheet">
+    <meta name="title" content="consoleimg">
+    <meta name="description" content="Add images to your website's developer console.">
+    <link rel="shortcut icon" href="https://defaced.dev/tools/consoleimg/favicon.ico" type="image/x-icon">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://defaced.dev/tools/consoleimg/">
+    <meta property="og:title" content="consoleimg">
+    <meta property="og:description" content="Add images to your website's developer console.">
+    <meta property="og:image" content="https://defaced.dev/tools/consoleimg/share.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://defaced.dev/tools/consoleimg/">
+    <meta property="twitter:title" content="consoleimg">
+    <meta property="twitter:description" content="Add images to your website's developer console.">
+    <meta property="twitter:image" content="https://defaced.dev/tools/consoleimg/share.png">
+    <style>
+        :root {
+            --background: #eee1d6;
+            --alt: #c4536b;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            /*color: var(--alt);*/
+            background-color: var(--background);
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 32px;
+        }
+
+        h1, h2, h3, legend, #filedrag {
+            color: var(--alt);
+            font-family: 'Arvo', serif;
+        }
+
+        a:link, a:hover, a:visited, a:active {
+            color: #000;
+        }
+
+        legend {
+            font-weight: bold;
+            color: var(--alt);
+        }
+
+        fieldset {
+            border-style: solid;
+            border-color: var(--alt);
+        }
+
+        #filedrag {
+            display: none;
+            font-weight: bold;
+            text-align: center;
+            padding: 1em 0;
+            margin: 1em 0;
+            border: 2px dashed var(--alt);;
+            border-radius: 4px;
+            cursor: default;
+        }
+
+        #filedrag.hover {
+            color: #000;
+            border-color: #000;
+            border-style: solid;
+        }
+
+        #logo {
+            width: 320px;
+        }
+
+        .button, button,input#fileselect:before {
+            margin-top: 8px;
+            padding: 8px;
+            color: var(--alt);
+            border: 2px solid var(--alt);;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            background-color: transparent;
+            font-family: 'Arvo', serif;
+            font-size: 17.6px;
+            cursor: pointer;
+        }
+
+        a:link.button, a:hover.button, a:visited.button, a:active.button {
+            color: var(--alt);
+        }
+
+        .button:hover, button:hover,input#fileselect:hover:before {
+            border-color: #000;
+            color: #000;
+        }
+
+        a:hover.button {
+            color: #000;
+        }
+
+        input#size, input#colour {
+            background: none;
+            outline: none;
+            border: 0;
+            border-bottom: 2px var(--alt) dashed;
+            font-size: 17.6px;
+            font-family: 'Arvo', serif;
+            color:var(--alt);
+            display:block;
+            margin-bottom:8px;
+        }
+
+        input#fileselect::-webkit-file-upload-button{
+            display:none;
+        }
+        input#fileselect:before{
+            content:'Select file';
+            width: 100px;
+            text-align: center;
+            padding: 4px;
+        }
+        pre,.fpre{
+            color: var(--alt);
+            font-size: 17.6px;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166309081-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-166309081-1');
+    </script>
+</head>
+<body>
+<img id="logo" src="consoleimg-logo.svg" alt="logo">
+
+<h1>Display images in your developer console!</h1>
+
+<h2>Download</h2>
+<p>You can download the latest version from the GitHub repository:</p>
+<a href="https://github.com/workeffortwaste/consoleimg/">https://github.com/workeffortwaste/consoleimg/</a>
+
+<h2>Usage</h2>
+Use the following code before the closing <span class="fpre">&lt;/body&gt;</span> tag.
+<pre>
+    &lt;script src=&quot;consoleimg.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        consoleimg.load('image.jpg', {size: 320, color: '#FFFFFF'})
+    &lt;/script&gt;
+</pre>
+<h3>Optional arguments</h3>
+<p><div class="fpre">size</div> Maximum height for the image to be displayed at. The default is 320.</p>
+<p><div class="fpre">color</div> CSS background-color to be used for the image. The default is transparent.</p>
+
+<h2>Compatibility</h2>
+
+<h3>Browsers</h3>
+<ul>
+    <li>Chrome - No known issues</li>
+    <li>Safari - No known issues</li>
+    <li>Edge (Chromium) - No known issues</li>
+    <li> Firefox - Restricted to images below 8KB</li>
+</ul>
+
+<h3>Image Formats</h3>
+<p>All image formats that are supported by CSS background-image should work without issue, including SVGs with
+    animation.</p>
+<p>Yes, that does include animated .gifs.</p>
+<p>Yes, it also means you could do *that*.</p>
+<button onclick="consoleimg.load('rick.gif')">Rickroll your console.</button>
+
+<h2>Demo</h2>
+<p>Look at this site's developer console to see an animated SVG example, otherwise use the tool below to instantly see
+    how your images will look in the developer console.</p>
+<form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Image Checker</legend>
+        <div>
+            <label for="size">Maximum image height:</label>
+            <input type="number" id="size" name="size" min="1" value="300">
+        </div>
+        <div>
+            <label for="colour">CSS background-color:</label>
+            <input type="text" id="colour" name="colour" value="transparent">
+        </div>
+        <div>
+            <label for="fileselect">Image file:</label>
+            <input type="file" id="fileselect" name="fileselect[]"/>
+            <div id="filedrag">Drag and drop an image here.</div>
+        </div>
+
+        <div id="submitbutton">
+            <button type="submit">Upload Image</button>
+        </div>
+
+    </fieldset>
+</form>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Why on earth would you make this?</h3>
+<p>Sorry :-(</p>
+
+<h3>Will it slow down my website?</h3>
+<p>The image request uses the fetch API asynchronously, unless you're loading large images there shouldn't be a
+    significant impact.</p>
+
+<h3>What happens on mobile?</h3>
+<p>By default the images will still be downloaded. It's up to you to decide if you want to detect for a mobile device
+    and not push the image to the console.</p>
+
+<h3>Who made this?</h3>
+<p>I did, you can find me on Twitter for more nonsense like this.</p>
+<a class="button" href="https://www.twitter.com/defaced/">@defaced</a>
+
+<script src="drag.js"></script>
+<script src="consoleimg.min.js"></script>
+<script>
+    consoleimg.load('consoleimg-logo-animated.svg', {size: 120})
+</script>
+</body>
+</html>

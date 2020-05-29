@@ -20,7 +20,7 @@ CSS background-color to be used for the image. The default is transparent.
 ### Compatibility
 #### Browsers
 * Chrome - No known issues
-* Safari - No known issues
+* Safari - Issue with images repeating
 * Edge (Chromium) - No known issues
 * Firefox - Restricted to images below 8KB
 #### Image Formats
